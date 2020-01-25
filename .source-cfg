@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# This file contains shell-independent configurations.
+# Any configurations that are specific to a machine
+# should be put in .local-source-cfg
+
+alias dotconfig='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+if [ -f .local-source-cfg ]; then
+  source .local-source-cfg
+fi
