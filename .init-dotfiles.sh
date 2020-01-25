@@ -8,7 +8,7 @@ dotconfig checkout &> /dev/null
 if [ $? = 0 ]; then
   echo "Checked out config."
 else
-  echo "Backing up pre-existing dot files:"
+  echo "Backing up pre-existing dot files to ~/.config-backup :"
   mkdir -p $HOME/.config-backup
   dotconfig checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | tee /dev/stderr | xargs -I{} mv {} .config-backup/{}
   dotconfig checkout
