@@ -1,0 +1,5 @@
+To initialize the dotfiles config on a new machine:
+
+curl -Lks https://raw.githubusercontent.com/leogeier/dotfiles/master/.init-dotfiles.sh > init-dotfiles.sh
+# Check script contents
+cat init-dotfiles.sh | /bin/bash
