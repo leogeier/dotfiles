@@ -1,1 +1,1 @@
-source .source-cfg
+source $HOME/.source-cfg
