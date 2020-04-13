@@ -30,6 +30,7 @@ call plug#end()
 " open NERDTree
 :nnoremap <C-p> :NERDTreeToggle<Cr>
 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " quit vim if the last window is a NERDTree
 
 syntax enable        " enable syntax processing
 
