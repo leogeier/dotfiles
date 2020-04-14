@@ -26,6 +26,9 @@ Plug 'tpope/vim-commentary'
 
 call plug#end()
 
+" YCM
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+
 " quit vim if the last window is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif 
 
