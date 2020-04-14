@@ -20,6 +20,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -35,6 +36,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 syntax enable        " enable syntax processing
 
 set showcmd          " show command in bottom bar
+
+set backspace=eol,indent,start      " allow backspacing over lines, indents, the start of insertion
 
 set hlsearch         " highlight matches
 set incsearch        " search as characters are entered
