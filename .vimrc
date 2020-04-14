@@ -5,14 +5,16 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Plugins
-call plug#begin('~/.vim/plugged')
-
 function! BuildYCM(info)
   if a:info.status == 'installed' || a:info.force
     !./install.py --clangd-completer --ts-completer --java-completer
   endif
 endfunction
+
+
+" ============ Plugins ============
+
+call plug#begin('~/.vim/plugged')
 
 Plug 'ycm-core/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'preservim/nerdtree'
@@ -24,20 +26,27 @@ Plug 'tpope/vim-commentary'
 
 call plug#end()
 
-" keybinds
+" quit vim if the last window is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif 
+
+
+" ============ Keybinds ============
 
 " open fzf
 :nnoremap <C-o> :Files<CR>
+
 " open NERDTree
 :nnoremap <C-p> :NERDTreeToggle<Cr>
 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif " quit vim if the last window is a NERDTree
+
+" ============ General ============
 
 syntax enable        " enable syntax processing
 
 set showcmd          " show command in bottom bar
 
-set backspace=eol,indent,start      " allow backspacing over lines, indents, the start of insertion
+" allow backspacing over lines, indents, the start of insertion
+set backspace=eol,indent,start      
 
 set hlsearch         " highlight matches
 set incsearch        " search as characters are entered
