@@ -69,4 +69,6 @@ set softtabstop=2    " number of spaces in tab while editing
 set shiftwidth=2     " the number of spaces in an 'indent'
 set expandtab        " write spaces instead of tabs when pressing TAB
 
+set scrolloff=3      " always display lines above/below cursor
+
 filetype indent on   " load filetype-specific indent files
