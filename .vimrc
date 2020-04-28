@@ -91,3 +91,7 @@ set scrolloff=3      " always display lines above/below cursor
 set clipboard=unnamed
 
 filetype indent on   " load filetype-specific indent files
+
+
+" Prevent vim from starting in replace mode on ubuntu
+nnoremap <esc>^[ <esc>^[
