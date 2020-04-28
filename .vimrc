@@ -31,6 +31,7 @@ call plug#end()
 " YCM
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_extra_conf_globlist = [ '~/Uni/Master/AdvCompProg/exercises/.ycm_extra_conf.py' ]
 
 " quit vim if the last window is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif 
