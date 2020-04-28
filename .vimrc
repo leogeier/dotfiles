@@ -48,8 +48,8 @@ hi Search ctermfg=234 ctermbg=75 guifg=#1C1C1C guibg=#5FAFFF
 " ============ Keybinds ============
 
 " jump forward/backward
-nnoremap <C-[> <C-o>
-nnoremap <C-]> <C-i>
+nnoremap <C-,> <C-o>
+nnoremap <C-.> <C-i>
 
 nnoremap <leader>g :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>G :YcmCompleter GoToDefinition<CR>
