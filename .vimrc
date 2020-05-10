@@ -93,6 +93,8 @@ set clipboard=unnamed
 
 filetype indent on   " load filetype-specific indent files
 
+autocmd FileType markdown setlocal spell " Enable spell checking for markdown files
+
 
 " Prevent vim from starting in replace mode on ubuntu
 nnoremap <esc>^[ <esc>^[
