@@ -24,7 +24,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'dikiaap/minimalist'
+Plug 'flazz/vim-colorschemes'
 
 call plug#end()
 
@@ -38,11 +38,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " colorscheme
 set t_Co=256
-colorscheme minimalist
+colorscheme Tomorrow-Night-Eighties
 " use IncSearch style for Search
-hi clear Search
-hi IncSearch ctermfg=234 ctermbg=75 cterm=NONE guifg=#1C1C1C guibg=#5FAFFF gui=NONE
-hi Search ctermfg=234 ctermbg=75 guifg=#1C1C1C guibg=#5FAFFF
+" hi clear Search
+" hi IncSearch ctermfg=234 ctermbg=75 cterm=NONE guifg=#1C1C1C guibg=#5FAFFF gui=NONE
+" hi Search ctermfg=234 ctermbg=75 guifg=#1C1C1C guibg=#5FAFFF
 
 
 " ============ Keybinds ============
