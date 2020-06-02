@@ -8,8 +8,8 @@ alias dotconfig='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 alias pingg="ping 8.8.8.8"
 
-MYVIMRC=$HOME/.vimrc
+MYVIMRC="$HOME/.vimrc"
 
-if [ -f .local-source-cfg ]; then
-  source .local-source-cfg
+if [ -f "$HOME/.local-source-cfg" ]; then
+  source "$HOME/.local-source-cfg"
 fi
