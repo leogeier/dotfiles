@@ -13,3 +13,8 @@ MYVIMRC="$HOME/.vimrc"
 if [ -f "$HOME/.local-source-cfg" ]; then
   source "$HOME/.local-source-cfg"
 fi
+
+mkcd() {
+  mkdir "$1"
+  cd "$1"
+}
