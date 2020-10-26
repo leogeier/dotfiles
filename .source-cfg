@@ -18,3 +18,12 @@ mkcd() {
   mkdir "$1"
   cd "$1"
 }
+
+unalias gcm
+gcm() {
+  if git show-ref --verify --quiet refs/heads/main; then
+    git checkout main
+  else
+    git checkout master
+  fi
+}
