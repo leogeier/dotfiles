@@ -49,8 +49,8 @@ colorscheme Tomorrow-Night-Eighties
 " ============ Keybinds ============
 
 " jump forward/backward
-nnoremap <C-,> <C-o>
-nnoremap <C-.> <C-i>
+nnoremap <C-k> <C-o>
+nnoremap <C-j> <C-i>
 
 nnoremap <leader>g :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>G :YcmCompleter GoToDefinition<CR>
