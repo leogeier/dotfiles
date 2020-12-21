@@ -104,6 +104,9 @@ prompt_context() {
 bindkey "[D" backward-word
 bindkey "[C" forward-word
 
+# enable vi mode
+bindkey -v
+
 export PATH=/usr/local/bin:$PATH
 
 alias gitgraph="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"

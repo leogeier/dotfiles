@@ -27,3 +27,14 @@ gcm() {
     git checkout master
   fi
 }
+
+kowalski,() {
+        if [[ $2 == "analysis" ]]
+        then
+                git status "${@:2}"
+        fi
+}
+
+pdb() {
+  python3 -m pdb "$@"
+}

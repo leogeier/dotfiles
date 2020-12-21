@@ -26,6 +26,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'flazz/vim-colorschemes'
+Plug 'dense-analysis/ale'
 
 call plug#end()
 
@@ -45,6 +46,8 @@ colorscheme Tomorrow-Night-Eighties
 " hi IncSearch ctermfg=234 ctermbg=75 cterm=NONE guifg=#1C1C1C guibg=#5FAFFF gui=NONE
 " hi Search ctermfg=234 ctermbg=75 guifg=#1C1C1C guibg=#5FAFFF
 
+" ALE
+let g:ale_fixers = {'python': ['autopep8']}
 
 " ============ Keybinds ============
 
