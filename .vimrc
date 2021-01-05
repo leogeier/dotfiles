@@ -47,7 +47,8 @@ colorscheme Tomorrow-Night-Eighties
 " hi Search ctermfg=234 ctermbg=75 guifg=#1C1C1C guibg=#5FAFFF
 
 " ALE
-let g:ale_fixers = {'python': ['autopep8']}
+let g:ale_fixers = {'python': ['autopep8'],
+                  \ 'javascript': ['eslint']}
 
 " ============ Keybinds ============
 
@@ -63,6 +64,12 @@ nnoremap <C-o> :Files<CR>
 
 " open NERDTree
 nnoremap <C-p> :NERDTreeToggle<Cr>
+
+" autofix lint
+nnoremap <leader>f :ALEFix<CR>
+
+" Remove highlight
+nnoremap <leader>h :noh<CR>
 
 
 " ============ General ============
