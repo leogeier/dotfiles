@@ -47,8 +47,12 @@ colorscheme Tomorrow-Night-Eighties
 " hi Search ctermfg=234 ctermbg=75 guifg=#1C1C1C guibg=#5FAFFF
 
 " ALE
+autocmd BufRead,BufNewFile *.geojson set filetype=json " geojson handled like json
+
 let g:ale_fixers = {'python': ['autopep8'],
-                  \ 'javascript': ['eslint']}
+                  \ 'javascript': ['eslint'],
+                  \ 'json': ['prettier']}
+
 
 " ============ Keybinds ============
 
@@ -106,6 +110,8 @@ filetype indent on   " load filetype-specific indent files
 
 autocmd FileType markdown setlocal spell " Enable spell checking for markdown files
 
+set colorcolumn=80,100,120 " Add line length markers
+set cursorline       " Highlight line of cursor
 
 " Prevent vim from starting in replace mode on ubuntu
 nnoremap <esc>^[ <esc>^[
