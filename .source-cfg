@@ -50,4 +50,16 @@ eval "$(pyenv virtualenv-init -)"
 export FZF_DEFAULT_COMMAND="$SHELL -c \"source $HOME/.local-source-cfg && fd --type file --hidden --exclude '{.git,node_modules,.cache,.clangd}' --follow --color=always --no-ignore\""
 export FZF_DEFAULT_OPTS="--ansi"
 
-alias tmuxx='tmux new -s'
+tmuxx() {
+  if [[ $# -lt 1 ]]; then
+    # attach to session, create new one if necessary
+    if tmux list-sessions 2>&1 | grep -q "no server running"; then
+      tmux
+    else
+      tmux a
+    fi
+  else
+    # create session if name for it is given
+    tmux new -s $1
+  fi
+}
