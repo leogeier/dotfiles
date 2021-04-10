@@ -110,6 +110,8 @@ filetype indent on   " load filetype-specific indent files
 
 autocmd FileType markdown setlocal spell " Enable spell checking for markdown files
 
+set directory=$HOME/.vim/swapfiles  " put swapfiles in this dir, not the one containing the file
+
 set colorcolumn=80,100,120 " Add line length markers
 set cursorline       " Highlight line of cursor
 
