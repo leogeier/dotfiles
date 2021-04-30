@@ -59,8 +59,7 @@ flags = [
 # Clang automatically sets the '-std=' flag to 'c++14' for MSVC 2015 or later,
 # which is required for compiling the standard library, and to 'c++11' for older
 # versions.
-if platform.system() != 'Windows':
-  flags.append( '-std=c++11' )
+flags.append( '-std=c++17' )
 
 
 # Set this to the absolute path to the folder (NOT the file!) containing the
@@ -97,6 +96,13 @@ def FindCorrespondingSourceFile( filename ):
 
 
 def Settings( **kwargs ):
+  if kwargs['language'] == 'cmake':
+    return {
+      'ls': {
+        "buildDirectory": "build"
+      }
+    }
+
   if kwargs[ 'language' ] == 'cfamily':
     # If the file is a header, try to find the corresponding source file and
     # retrieve its flags from the compilation database if using one. This is
