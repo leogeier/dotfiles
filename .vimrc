@@ -82,6 +82,15 @@ nnoremap <C-j> <C-i>
 nnoremap <leader>g :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>G :YcmCompleter GoToDefinition<CR>
 
+nnoremap <leader>r :YcmCompleter GoToReferences<CR>
+nnoremap <leader>d :YcmCompleter FixIt<CR>
+
+nnoremap <leader>h :bp<CR>
+nnoremap <leader>l :bn<CR>
+
+nnoremap <C-h> :cnext<CR>
+nnoremap <C-l> :cprev<CR>
+
 " navigate location list
 nnoremap <C-n> :lbelow<CR>
 nnoremap <C-m> :labove<CR>
@@ -96,7 +105,7 @@ nnoremap <C-p> :NERDTreeToggle<Cr>
 nnoremap <leader>f :ALEFix<CR>
 
 " Remove highlight
-nnoremap <leader>h :noh<CR>
+nnoremap <leader>H :noh<CR>
 
 
 " ============ General ============
@@ -138,6 +147,8 @@ set directory=$HOME/.vim/swapfiles  " put swapfiles in this dir, not the one con
 
 set colorcolumn=80,100,120 " Add line length markers
 set cursorline       " Highlight line of cursor
+
+set laststatus=2 " always show status line
 
 " Prevent vim from starting in replace mode on ubuntu
 nnoremap <esc>^[ <esc>^[

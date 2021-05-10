@@ -47,7 +47,7 @@ export PATH="/home/leo/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-export FZF_DEFAULT_COMMAND="$SHELL -c \"source $HOME/.local-source-cfg && fd --type file --hidden --exclude '{.git,node_modules,.cache,.clangd}' --follow --color=always --no-ignore\""
+export FZF_DEFAULT_COMMAND="$SHELL -c \"source $HOME/.local-source-cfg && fd --type file --hidden --exclude '{.git,node_modules,.cache,.clangd,__pycache__,.pytest_cache,build}' --follow --color=always --no-ignore\""
 export FZF_DEFAULT_OPTS="--ansi"
 
 tmuxx() {
