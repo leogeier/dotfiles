@@ -30,13 +30,17 @@ Plug 'bfrg/vim-cpp-modern'
 Plug 'joshdick/onedark.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'habamax/vim-godot'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 call plug#end()
 
 " YCM
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_extra_conf_globlist = [ '~/Uni/Master/AdvCompProg/contests/.ycm_extra_conf.py' ]
+let g:ycm_extra_conf_globlist = [ '~/Uni/Master/AdvCompProg/contests/.ycm_extra_conf.py',
+                                \ '/home/leo/Uni/Master/SysCpp/exercises/.ycm_extra_conf.py' ]
 let g:ycm_always_populate_location_list = 1
 let g:ycm_language_server = [
   \   {
@@ -69,9 +73,12 @@ autocmd BufRead,BufNewFile *.geojson set filetype=json " geojson handled like js
 
 let g:ale_fixers = {'python': ['autopep8'],
                   \ 'javascript': ['eslint'],
+                  \ 'typescript': ['eslint', 'prettier', 'tslint'],
+                  \ 'typescriptreact': ['eslint', 'prettier'],
                   \ 'json': ['prettier'],
                   \ 'cpp': ['clang-format', 'clangtidy']}
-
+let g:ale_python_auto_pipenv = 1
+" let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
 
 " ============ Keybinds ============
 
@@ -84,6 +91,8 @@ nnoremap <leader>G :YcmCompleter GoToDefinition<CR>
 
 nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 nnoremap <leader>d :YcmCompleter FixIt<CR>
+
+nnoremap <leader>n :YcmCompleter RefactorRename 
 
 nnoremap <leader>h :bp<CR>
 nnoremap <leader>l :bn<CR>
@@ -149,6 +158,10 @@ set colorcolumn=80,100,120 " Add line length markers
 set cursorline       " Highlight line of cursor
 
 set laststatus=2 " always show status line
+
+set formatoptions+=rco
+
+set splitright " vertical splits put the new buffer on the right
 
 " Prevent vim from starting in replace mode on ubuntu
 nnoremap <esc>^[ <esc>^[
