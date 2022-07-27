@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # This file contains shell-independent configurations.
 # Any configurations that are specific to a machine
@@ -28,6 +28,9 @@ gcm() {
   fi
 }
 
+# unalias gcnp
+# alias gcnp="git diff -- ':!**/package-lock.json'"
+
 kowalski,() {
         if [[ $2 == "analysis" ]]
         then
@@ -54,7 +57,8 @@ tmuxx() {
   if [[ $# -lt 1 ]]; then
     # attach to session, create new one if necessary
     if tmux list-sessions 2>&1 | grep -q "no server running"; then
-      tmux
+      read "SESSION_NAME?Creating first session. Enter name: "
+      tmux new -s "$SESSION_NAME"
     else
       tmux a
     fi
@@ -62,4 +66,25 @@ tmuxx() {
     # create session if name for it is given
     tmux new -s $1
   fi
+}
+
+poweroof() {
+  echo "     OOOOOOOOO          OOOOOOOOO     FFFFFFFFFFFFFFFFFFFFFF
+   OO:::::::::OO      OO:::::::::OO   F::::::::::::::::::::F
+ OO:::::::::::::OO  OO:::::::::::::OO F::::::::::::::::::::F
+O:::::::OOO:::::::OO:::::::OOO:::::::OFF::::::FFFFFFFFF::::F
+O::::::O   O::::::OO::::::O   O::::::O  F:::::F       FFFFFF
+O:::::O     O:::::OO:::::O     O:::::O  F:::::F             
+O:::::O     O:::::OO:::::O     O:::::O  F::::::FFFFFFFFFF   
+O:::::O     O:::::OO:::::O     O:::::O  F:::::::::::::::F   
+O:::::O     O:::::OO:::::O     O:::::O  F:::::::::::::::F   
+O:::::O     O:::::OO:::::O     O:::::O  F::::::FFFFFFFFFF   
+O:::::O     O:::::OO:::::O     O:::::O  F:::::F             
+O::::::O   O::::::OO::::::O   O::::::O  F:::::F             
+O:::::::OOO:::::::OO:::::::OOO:::::::OFF:::::::FF           
+ OO:::::::::::::OO  OO:::::::::::::OO F::::::::FF           
+   OO:::::::::OO      OO:::::::::OO   F::::::::FF           
+     OOOOOOOOO          OOOOOOOOO     FFFFFFFFFFF"
+  sleep 1
+  poweroff
 }

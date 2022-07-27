@@ -8,7 +8,7 @@ endif
 function! BuildYCM(info)
   if a:info.status == 'installed' || a:info.force
     " Compile with C-family, Java-/Typescript, and Java support
-    !./install.py --clangd-completer --ts-completer --java-completer
+    !./install.py --clangd-completer --ts-completer --java-completer --rust-completer
   endif
 endfunction
 
@@ -94,11 +94,13 @@ nnoremap <leader>d :YcmCompleter FixIt<CR>
 
 nnoremap <leader>n :YcmCompleter RefactorRename 
 
+nnoremap <leader>q :YcmRestartServer<CR>
+
 nnoremap <leader>h :bp<CR>
 nnoremap <leader>l :bn<CR>
 
-nnoremap <C-h> :cnext<CR>
-nnoremap <C-l> :cprev<CR>
+nnoremap <C-h> :tabp<CR>
+nnoremap <C-l> :tabn<CR>
 
 " navigate location list
 nnoremap <C-n> :lbelow<CR>
@@ -106,6 +108,7 @@ nnoremap <C-m> :labove<CR>
 
 " open fzf
 nnoremap <C-o> :Files<CR>
+nnoremap <C-i> :Rg<CR>
 
 " open NERDTree
 nnoremap <C-p> :NERDTreeToggle<Cr>
@@ -116,6 +119,10 @@ nnoremap <leader>f :ALEFix<CR>
 " Remove highlight
 nnoremap <leader>H :noh<CR>
 
+" Enable file select on <Enter> in quickfix window
+autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
+" Open quickfix files in new tab
+autocmd FileType qf nnoremap <C-t> <C-W><Enter><C-W>T
 
 " ============ General ============
 
