@@ -119,8 +119,12 @@ source $HOME/.source-cfg
 export PATH="/usr/local/sbin:$PATH"
 
 # Needs to be the last line
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh &> /dev/null
-if [ $? -ne 0 ]; then
+if [ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+if [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
   source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
-
+if [ -f /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
