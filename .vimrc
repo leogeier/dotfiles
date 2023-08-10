@@ -79,7 +79,7 @@ let g:ale_fixers = {'python': ['autopep8'],
                   \ 'cpp': ['clang-format', 'clangtidy']}
 let g:ale_python_auto_pipenv = 1
 " let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
-call add(g:ale_c_build_dir_names, '.')
+let g:ale_c_build_dir_names = ['build', 'bin', '.']
 
 " ============ Keybinds ============
 
